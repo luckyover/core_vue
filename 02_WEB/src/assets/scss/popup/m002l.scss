@@ -1,0 +1,33 @@
+.M002L {
+  .table-user {
+    th,
+    td {
+      max-width: 110px;
+    }
+    .col-user_cd {
+      width: 110px;
+      max-width: 110px;
+      min-width: 110px;
+      left: 0px;
+    }
+    .col-user_nm {
+      width: 200px;
+      max-width: 200px;
+      min-width: 200px;
+      left: 110px;
+    }
+    .col-tel {
+      width: 110px;
+      max-width: 110px;
+      min-width: 110px;
+    }
+    .col-fax {
+      width: 110px;
+      max-width: 110px;
+      min-width: 110px;
+    }
+    .col-mailaddress {
+      max-width: 500px;
+    }
+  }
+}

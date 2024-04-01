@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<configuration>
+
+  <appSettings>
+    <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true" />
+    <add key="SQL_CON_STR" value="Server=192.168.5.74;Port=5432;Database=jfab;User Id=koujyo;Password=koujyo;" />
+    <add key="ERR_LOG_PTH" value="D:\projects\Git\Jfab\03_WCF\Wcf\log\error-log\" />
+    <add key="FIL_SAV_PTH" value="D:\projects\Git\Jfab\03_WCF\Wcf\download\" />
+    <add key="FIL_LOG" value="D:\projects\Git\Jfab\03_WCF\Wcf\log\export-query\" />
+  </appSettings>
+  <system.web>
+    <compilation debug="true" strict="false" explicit="true" targetFramework="4.5.2">
+      <buildProviders>
+        <add extension=".rdlc"
+          type="Microsoft.Reporting.RdlBuildProvider, Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845DCD8080CC91"/>
+      </buildProviders>
+    </compilation>
+    <httpRuntime targetFramework="4.5.2"/>
+    <httpModules>
+      <add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web"/>
+    </httpModules>
+    <httpHandlers>
+      <add path="Reserved.ReportViewerWebControl.axd" verb="*"
+        type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845DCD8080CC91"
+        validate="false"/>
+    </httpHandlers>
+  </system.web>
+  <system.serviceModel>
+    <behaviors>
+      <serviceBehaviors>
+        <behavior>
+          <!-- To avoid disclosing metadata information, set the values below to false before deployment -->
+          <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true"/>
+          <!-- To receive exception details in faults for debugging purposes, set the value below to true.  Set to false before deployment to avoid disclosing exception information -->
+          <serviceDebug includeExceptionDetailInFaults="false"/>
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+    <protocolMapping>
+        <add binding="basicHttpsBinding" scheme="https"/>
+    </protocolMapping>    
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true"/>
+  </system.serviceModel>
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true">
+      <remove name="ApplicationInsightsWebTracking"/>
+      <add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web"
+        preCondition="managedHandler"/>
+    </modules>
+    <!--
+        To browse web app root directory during debugging, set the value below to true.
+        Set to false before deployment to avoid disclosing web app folder information.
+      -->
+    <directoryBrowse enabled="true"/>
+    <validation validateIntegratedModeConfiguration="false"/>
+    <handlers>
+      <add name="ReportViewerWebControlHandler" verb="*" path="Reserved.ReportViewerWebControl.axd" preCondition="integratedMode"
+        type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845DCD8080CC91"/>
+    </handlers>
+  </system.webServer>
+
+</configuration>

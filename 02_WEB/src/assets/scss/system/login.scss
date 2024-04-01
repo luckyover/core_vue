@@ -1,0 +1,49 @@
+.login {
+  .form-signin {
+    width: 100%;
+    max-width: 700px;
+    padding: 160px 15px 100px 15px;
+    margin: 0 auto;
+    color: #203c8b;
+    .ans-item .ans-item-control input {
+      appearance: none;
+      outline: 0;
+      border: 1px solid #ccc;
+      background-color: white;
+      width: 350px;
+      border-radius: 3px;
+      padding: 15px;
+      margin: 0 auto 10px auto;
+      display: block;
+      text-align: center;
+      font-size: 16px;
+      transition-duration: 0.25s;
+      height: auto !important;
+      &[type='text'] {
+        color: green;
+      }
+      &[type='password'] {
+        color: #2196f3;
+      }
+    }
+    ::placeholder {
+      color: #2196f3 !important;
+    }
+    .btn-login {
+      appearance: none;
+      outline: 0;
+      background-color: #2196f3;
+      border: 0;
+      padding: 15px;
+      color: #fff;
+      border-radius: 3px;
+      width: 350px;
+      font-size: 18px;
+    }
+  }
+  .form-control {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

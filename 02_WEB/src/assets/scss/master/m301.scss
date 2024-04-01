@@ -1,0 +1,64 @@
+.m301 {
+  .table-size-area {
+    width: 100%;
+  }
+  .table-size {
+    .col-add {
+      width: 1.5%;
+    }
+    .col-item_cd {
+      width: 120px;
+    }
+    .col-item_nm {
+      width: 130px;
+    }
+    .col-category_div {
+      width: 100px;
+    }
+    .col-material_div {
+      width: 100px;
+    }
+    .col-processing_place_div {
+      width: 100px;
+    }
+    /** number_sheet **/
+    .col-number_sheet {
+      width: 80px;
+      min-width: 80px;
+    }
+    .col-number_sheet_fr {
+      width: 35px;
+    }
+    .col-number_sheet_to {
+      width: 35px;
+    }
+    .col-number_sheet_icon {
+      width: 20px;
+    }
+    /** end number_sheet **/
+    .col-color_div {
+      width: 50px;
+    }
+    .col-sales_amt {
+      width: 60px;
+    }
+    .col-remove {
+      width: 1.5%;
+    }
+    .txt-start {
+      input {
+        text-align: left !important;
+      }
+    }
+    .txt-end {
+      input {
+        text-align: right !important;
+      }
+    }
+    .txt-center {
+      input {
+        text-align: center !important;
+      }
+    }
+  }
+}

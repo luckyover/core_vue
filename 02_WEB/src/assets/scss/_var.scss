@@ -1,0 +1,19 @@
+$font: 'NotoSans', 'Roboto';
+$fontSize: 1rem;
+$primaryColor: #0d6efd;
+$primaryHoverColor: #0b5ed7;
+$dangerColor: #dc3545;
+$dangerHoverColor: #bb2d3b;
+$borderColor: #ccc;
+
+:root {
+  --dp-font-family: 'NotoSans', 'Roboto';
+  --dp-cell-size: 25px;
+  --dp-cell-padding: 1px 0px 4px 0px;
+  --dp-row-margin: 3px 0px 0px 0px;
+  --dp-month-year-row-height: 30px;
+  --dp-menu-min-width: 210px;
+  --dp-menu-width: 210px !important;
+  --dp-font-size: 0.95rem;
+  --dp-common-padding: 5px;
+}

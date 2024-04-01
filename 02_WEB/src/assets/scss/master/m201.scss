@@ -1,0 +1,40 @@
+.m201 {
+  .table-size-area {
+    width: 100%;
+  }
+  .table-size {
+    .col-size {
+      width: 125px;
+      input {
+        text-align: left !important;
+      }
+      option {
+        text-align: left !important;
+      }
+    }
+    .col-price-list {
+      width: 150px;
+    }
+    .col-retail-upr {
+      width: 150px;
+      input {
+        text-align: right !important;
+      }
+    }
+  }
+  .col-item {
+    width: 200px;
+    text-align: left;
+  }
+  .col-color {
+    width: 150px;
+    text-align: left;
+    input {
+      text-align: left !important;
+    }
+  }
+  .col-item-nm {
+    width: 400px;
+    text-align: left;
+  }
+}

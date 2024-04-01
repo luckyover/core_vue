@@ -1,16 +1,16 @@
 version: '3'
 services:
   # PHP Service
-  spkl_api:
+  core_api:
     build:
       context: .
       dockerfile: 01_API/Dockerfile
-    image: spkl_api
-    container_name: spkl_api
+    image: core_api
+    container_name: core_api
     restart: unless-stopped
     tty: true
     environment:
-      SERVICE_NAME: spkl_api
+      SERVICE_NAME: core_api
       SERVICE_TAGS: dev
       TZ: Asia/Tokyo
     volumes:
@@ -19,37 +19,37 @@ services:
       - /var/www/vendor
 
   # Nginx Service
-  spkl_server:
+  core_server:
     image: nginx:alpine
-    container_name: spkl_server
+    container_name: core_server
     restart: unless-stopped
     tty: true
     environment:
       TZ: Asia/Tokyo
     ports:
-      - "9019:80"
+      - "7019:80"
     volumes:
       - ./01_API/public:/var/www/public
       - ./01_API/nginx/conf.d/:/etc/nginx/conf.d/
 
   # WEB Vue
-  spkl_web:
+  core_web:
     build:
       context: .
       dockerfile: 02_WEB/Dockerfile
-    image: spkl_web
-    container_name: spkl_web
+    image: core_web
+    container_name: core_web
     restart: unless-stopped
     tty: true
     command: npm run dev
     environment:
       CHOKIDAR_USEPOLLING: true
-      SERVICE_NAME: spkl_web
+      SERVICE_NAME: core_web
       SERVICE_TAGS: dev
       TZ: Asia/Tokyo
     working_dir: /app
     ports:
-      - "9020:9020"
+      - "7020:7020"
     volumes:
       - ./02_WEB/:/app
       - /app/node_modules

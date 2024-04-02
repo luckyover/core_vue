@@ -28,10 +28,10 @@ export default defineConfig(({mode}) => {
       }
     },
     server: {
-      port: parseInt(process.env.VITE_PORT ?? '9020'),
+      port: parseInt(process.env.VITE_PORT ?? '7020'),
       proxy: {
         '/api': {
-          target: process.env.VITE_API_URI ?? 'http://localhost:9019'
+          target: process.env.VITE_API_URI ?? 'http://localhost:7019'
         }
       }
     }
